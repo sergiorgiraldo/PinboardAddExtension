@@ -2,6 +2,9 @@ window.onload=function(){
 	if (location.href.indexOf("www.google.com/search") == -1 && 
 		location.href.indexOf("www.google.com.br/search") == -1 &&
 		location.href.indexOf("pinboard.in") == -1 &&
+		location.href.indexOf("whatsapp") == -1 &&
+		location.href.indexOf("mail.google") == -1 &&
+		location.href.indexOf("outlook.live") == -1 &&
 		location.href.indexOf(".intranet") == -1 
 		){
 		_url = encodeURIComponent(location.href)
