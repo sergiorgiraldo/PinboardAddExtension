@@ -1,4 +1,4 @@
-function check(value) {
+window.onload=function(){
 	sitesToExclude = ['www.google.com/search', 
 			'www.google.com.br/search', 
 			'pinboard.in', 
@@ -6,17 +6,14 @@ function check(value) {
 			'mail.google', 
 			'outlook.live', 
 			'intranet'];
-  
-	for (var i = 0; i < sitesToExclude.length; i++) {
-	  if (value.indexOf(sitesToExclude[i]) > -1) {
-		return false;
-	  }
-	}
-	return true;
-  }
 
-window.onload=function(){
-	if (check(location.href)){
+	checked = true;
+
+	sitesToExclude.forEach(function (site) {
+		if (checked) checked = (location.href.indexOf(site) == -1);
+	});
+
+	if (checked){
 		_url = encodeURIComponent(location.href)
 		_description = encodeURIComponent(document.title)
 		_dt = new Date().getFullYear().toString() + ('0' + (new Date().getMonth() + 1)).slice(-2) + ('0' + new Date().getDate()).slice(-2) + ' ' + new Date().getFullYear().toString() + ('0' + (new Date().getMonth() + 1)).slice(-2)
