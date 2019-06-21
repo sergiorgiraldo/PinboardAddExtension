@@ -5,6 +5,7 @@ window.onload=function(){
 			'whatsapp', 
 			'mail.google', 
 			'outlook.live', 
+			'file://',  
 			'intranet'];
 
 	checked = true;
